@@ -1,11 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 import urllib.request
 
 driver = webdriver.Chrome()
 driver.get("https://www.google.co.kr/imghp?hl=ko&tab=ri&ogbl")
-elem = driver.find_element_by_name("q")
+elem = driver.find_element(By.NAME, "q")
 elem.send_keys("뉴진스 민지")
 elem.send_keys(Keys.RETURN)
 
