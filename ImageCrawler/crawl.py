@@ -168,7 +168,7 @@ def crawling_images(query):
 #     driver.close()
 
 
-names = ["뉴진스 다니엘"]
+names = ["노홍철"]
 # names = ["뉴진스 하니"]
 for name in names:
     crawling_images(name)
