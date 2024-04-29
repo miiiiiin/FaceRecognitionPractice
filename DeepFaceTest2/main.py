@@ -5,8 +5,10 @@ from deepface import DeepFace
 
 data_dir = "Celebrity Faces Dataset"
 for directory in os.listdir(data_dir):
-        first_file = os.listdir(os.path.join(data_dir, directory))[0]
-        shutil.copyfile(os.path.join(data_dir, directory, first_file), os.path.join("Samples", f"{directory}.jpg"))
+        joined = os.path.join(data_dir, directory)
+        if os.path.isdir(joined):
+                first_file = os.listdir(joined)[0]
+                shutil.copyfile(os.path.join(data_dir, directory, first_file), os.path.join("Samples", f"{directory}.jpg"))
 
 smallest_distance = None
 
