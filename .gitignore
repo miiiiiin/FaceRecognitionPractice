@@ -2,3 +2,6 @@
 ImageCrawler/train_dataset/
 DeepFaceTest2/Celeb Dataset/
 DeepFaceTest2/Celebrity Faces Dataset/
+DeepFaceTest2/__pycache__/
+DeepFaceTest2/.DS_Store/
+DeepFaceTest2/.idea/
