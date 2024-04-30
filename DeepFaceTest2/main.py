@@ -4,13 +4,20 @@ import json
 from PIL import Image
 from deepface import DeepFace
 
+import single_face_detector
+
 w = 255
 
 # data_dir = "Celebrity Faces Dataset"
 data_dir = "Celeb Dataset"
 for directory in os.listdir(data_dir):
         joined = os.path.join(data_dir, directory)
+        print("joined:", joined)
+
         if os.path.isdir(joined):
+                # 사진에 사람 얼굴이 2명 이상인지 확인 후, 삭제
+                single_face_detector.remove_non_single_faces(joined)
+
                 first_file = os.listdir(joined)[0]
                 first_file_path = joined+"/"+first_file
                 if os.path.isfile(first_file_path):
